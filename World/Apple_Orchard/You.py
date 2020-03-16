@@ -1,6 +1,6 @@
 import inspect, os
 
-def poo(command = ""):
+def help(command = ""):
     """COMMAND: HELP
     For learning how to use commands.
     Enter "help()" to see your available commands.
