@@ -59,7 +59,7 @@ def Update(item, attribute, value):
             att = parts[0].replace(' ','')
             val = parts[1].replace(' ','')
             if (att == attribute):
-                contents[i]= att+'='+value
+                contents[i]= att+'='+value+'\n'
                 break
     f.seek(0)
     f.truncate()
