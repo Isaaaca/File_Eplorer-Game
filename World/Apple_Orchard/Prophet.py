@@ -46,7 +46,7 @@ def quest1():
             options = ["Yes, please.",
             "No thank you."]
             if (Ask(options)==1):
-                Say("Here you go.")
+                Say(__name__,"Here you go.")
                 Show("poop.png")
 
             Say(__name__,"Please Explorer, bring me the apple!")
@@ -94,7 +94,7 @@ def quest2():
             options = ["Yes, please.",
             "No thank you."]
             if (Ask(options)==1):
-                Say("Here you go.")
+                Say(__name__,"Here you go.")
                 Show("poop.png")
 
             Say(__name__,"Please Explorer, make this apple Red!")

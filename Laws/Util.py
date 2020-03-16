@@ -40,7 +40,8 @@ def Ask(options):
             choice = input("Please enter a number from 1~"+ str(counter-1)+": ")
         validChoice = choice.isnumeric() and int(choice)<counter
 
-    reply = textwrap.fill(options[int(choice)-1])
+    choice = int(choice)
+    reply = textwrap.fill(options[choice-1])
     reply = textwrap.indent(reply, ' * ', lambda line: True)
     print("\nYou")
     print(reply+'\n')
