@@ -26,7 +26,7 @@ def UpdateState():
             if file == 'You.py':
                 path = (os.path.join(currPath, file))
         newstate[currPath]=folders,filestates
-        
+
     if(gamestate != newstate):
         gamestate = newstate
         cwd = os.getcwd()
@@ -42,21 +42,18 @@ def UpdateState():
         while interactables:
             itemx = interactables.pop()
             del globals()[itemx]
-        
+
         for itemx in os.listdir():
             print
             if itemx != '__init__.py' and itemx != '__pycache__' and itemx != 'You.py':
                 name = os.path.splitext(itemx)[0]
                 globals()[name] = importlib.import_module(name)
+                importlib.reload(globals()[name])
                 interactables.append(name)
 
 
-        
+
 UpdateState()
 
 
 exec(open(path).read())
-
-
-
-
