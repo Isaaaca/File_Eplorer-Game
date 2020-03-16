@@ -35,7 +35,10 @@ def UpdateState():
         os.chdir(os.path.dirname(path))
         sys.path.append(os.getcwd())
         del CurrentLocation
-        location = os.path.relpath(os.path.dirname(path),root).replace('\\','.')
+        if sys.platform == "win32":
+            location = os.path.relpath(os.path.dirname(path),root).replace('\\','.')
+        else:
+            location = os.path.relpath(os.path.dirname(path),root).replace('/','.')
         CurrentLocation = importlib.import_module(location)
 
 

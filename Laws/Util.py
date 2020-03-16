@@ -2,11 +2,15 @@ import os, sys, subprocess, textwrap, time
 
 def Show(filename):
     path = os.path.join(os.path.dirname(__file__), "Images", filename)
-    if sys.platform == "win32":
-        os.startfile(path)
-    else:
-        opener ="open" if sys.platform == "darwin" else "xdg-open"
-        subprocess.call([opener, path])
+    try:
+        if sys.platform == "win32":
+            os.startfile(path)
+        else:
+            opener ="open" if sys.platform == "darwin" else "xdg-open"
+            subprocess.call([opener, path])
+    except:
+        print("Unable to open image in your current system. To see it manually go to: ")
+        print(path)
 
 def Say(name, text):
 
