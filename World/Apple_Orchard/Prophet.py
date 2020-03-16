@@ -61,7 +61,7 @@ def quest1():
             Wait(1)
             Say(__name__,"IT IS TRUE. You are the Explorer.")
 
-    quest2()
+        quest2()
 
 def quest2():
 
@@ -75,7 +75,7 @@ def quest2():
             else:
                 Update(State.__file__, "quest2complete", "True")
     else:
-        Say("Where did the apple go!? Please Explorer, let me have my apple. Do not torture me so! ")
+        Say(__name__,"Where did the apple go!? Please Explorer, let me have my apple. Do not torture me so! ")
         return
 
     importlib.reload(State)
