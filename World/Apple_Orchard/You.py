@@ -46,8 +46,6 @@ def talk(person = ""):
     if not person:
         print("A name is required for this command.")
     else:
-        if (person.Type != "person"):
-            print (__name__+" is not a person.")
-        else:
+        if (person.isPerson):
             print()
             person.talk()
