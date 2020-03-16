@@ -1,4 +1,4 @@
-import os, sys, subprocess, textwrap
+import os, sys, subprocess, textwrap, time
 
 def Show(filename):
     path = os.path.join(os.path.dirname(__file__), "Images", filename)
@@ -8,12 +8,12 @@ def Show(filename):
         opener ="open" if sys.platform == "darwin" else "xdg-open"
         subprocess.call([opener, path])
 
-def Say(text):
+def Say(name, text):
 
+    print(name)
     text = textwrap.fill(text)
     text = textwrap.indent(text, ' # ', lambda line: True)
-    print(text)
-    print(' # ')
+    print(text+'\n')
 
 def Ask(options):
     wrapper = textwrap.TextWrapper()
@@ -35,4 +35,36 @@ def Ask(options):
         elif (not int(choice)<counter):
             choice = input("Please enter a number from 1~"+ str(counter-1)+": ")
         validChoice = choice.isnumeric() and int(choice)<counter
+
+    reply = textwrap.fill(options[int(choice)-1])
+    reply = textwrap.indent(reply, ' * ', lambda line: True)
+    print("\nYou")
+    print(reply+'\n')
+
     return choice
+
+def Search(item, location):
+
+    items = [f for f in os.listdir(location) if os.path.isfile(os.path.join(location, f))]
+    items = [os.path.splitext(f)[0] for f in items if (item in f)]
+    return items
+
+def Update(item, attribute, value):
+    f = open(item,'r+')
+    contents = f.readlines()
+    for i in range(len(contents)):
+        line = contents[i]
+        parts = line.split('=')
+        if (len(parts) == 2):
+            att = parts[0].replace(' ','')
+            val = parts[1].replace(' ','')
+            if (att == attribute):
+                contents[i]= att+'='+value
+                break
+    f.seek(0)
+    f.truncate()
+    f.writelines(contents)
+    f.close()
+
+def Wait(t):
+    time.sleep(t)
