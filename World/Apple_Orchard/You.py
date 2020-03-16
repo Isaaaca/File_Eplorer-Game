@@ -34,8 +34,8 @@ def look(thing = ""):
     else:
         print(inspect.getdoc(thing))
 
-            
-    
+
+
 
 def talk(person = ""):
     """COMMAND: TALK
@@ -49,5 +49,5 @@ def talk(person = ""):
         if (person.Type != "person"):
             print (__name__+" is not a person.")
         else:
+            print()
             person.talk()
-        
