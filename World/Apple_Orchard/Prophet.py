@@ -16,6 +16,9 @@ def talk():
         quest1()
     elif (not State.quest2complete) or (not State.quest2given):
         quest2()
+    else:
+        Say("Developer","Game's over dude.")
+
 
 def quest1():
 
