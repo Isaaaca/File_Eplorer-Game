@@ -37,7 +37,7 @@ def quest1():
             Ask(options)
 
             Say(__name__,"I have been earning for the apple that is upon the tree for ages past. But alas, I am but lines of code in this world, unable to move! This Prophetic Neo Graphics (PNG) depicts a way to move things, but I cannot understand it. Perhaps you could help? Please bring me the apple!")
-            Show("poop.png")
+            Show("How_To_Move_Things.png")
             Update(State.__file__, "quest1given","True")
 
         else:
@@ -47,7 +47,7 @@ def quest1():
             "No thank you."]
             if (Ask(options)==1):
                 Say(__name__,"Here you go.")
-                Show("poop.png")
+                Show("How_To_Move_Things.png")
 
             Say(__name__,"Please Explorer, bring me the apple!")
     else:
@@ -85,7 +85,7 @@ def quest2():
             Say(__name__,"Alas, woe is me! Are there no apples I can eat?")
             Wait(2)
             Say(__name__,"Explorer, if you really are who you are, you must be able to change the *FUNDAMENTAL* properties of this apple. This PNG will show you how.")
-            Show("poop.png")
+            Show("How_To_Change_Fundamental_Things.png")
             Update(State.__file__, "quest2given","True")
 
         else:
@@ -95,7 +95,7 @@ def quest2():
             "No thank you."]
             if (Ask(options)==1):
                 Say(__name__,"Here you go.")
-                Show("poop.png")
+                Show("How_To_Change_Fundamental_Things.png")
 
             Say(__name__,"Please Explorer, make this apple Red!")
     else:
