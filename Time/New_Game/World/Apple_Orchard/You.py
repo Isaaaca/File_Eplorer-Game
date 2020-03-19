@@ -7,6 +7,7 @@ def help(command = ""):
     Enter "help(<command_name>)" to learn more about a command.
     """
     UpdateState()
+    print()
     if (command):
         if(callable(command)):
             print(inspect.getdoc(command))
@@ -19,6 +20,7 @@ def help(command = ""):
         print("\"help()\"")
         print("\nEnter \"help(<command_name>)\" to learn more about a command.")
         print("E.g. \"help(look)\",\"help(talk)\"")
+    print()
 
 def look(thing = ""):
     """COMMAND: LOOK
@@ -27,12 +29,14 @@ def look(thing = ""):
     Enter "look(<name>)" to take a closer look at something.
     """
     UpdateState()
+    print()
     if not thing:
         print('You are curently in ' + CurrentLocation.__name__)
         for interactable in interactables:
             print(interactable)
     else:
         print(inspect.getdoc(thing))
+    print()
 
 
 
@@ -40,11 +44,12 @@ def look(thing = ""):
 def talk(person = ""):
     """COMMAND: TALK
     For talking to people.
-    Enter "look(<name>)" to enter into coversation with the person.
+    Enter "talk(<name>)" to enter into coversation with the person.
     """
     UpdateState()
     if not person:
         print("A name is required for this command.")
+        print()
     else:
         if (person.isPerson):
             print()
