@@ -1,4 +1,0 @@
-"""Apple Tree
-
-Lorem Ipsum
-"""
