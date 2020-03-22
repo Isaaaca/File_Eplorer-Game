@@ -1,5 +1,0 @@
-"""Cabbage
-
-Round, leafy greens!
-
-"""

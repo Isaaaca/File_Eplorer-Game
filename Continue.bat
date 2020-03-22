@@ -1,1 +1,0 @@
-python-3.8.1\python.exe -i -B File_Explorer.py

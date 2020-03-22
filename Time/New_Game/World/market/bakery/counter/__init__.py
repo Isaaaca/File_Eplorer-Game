@@ -1,5 +1,0 @@
-"""Counter
-
-Kaching, Kaching!
-
-"""
