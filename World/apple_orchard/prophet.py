@@ -19,24 +19,24 @@ def talk():
     elif (not State.quest2complete) or (not State.quest2given):
         quest2()
     else:
-        Say("How can I help, Explorer?")
+        Say(__name__,"How can I help, Explorer?")
         options = ["Where is the Grandmaster again?",
         "How do I move things again?",
         "How do I change FUNDAMENTAL properties again?",
         "Nothing, I just wanted to talk."]
         choice = Ask(options)
         if (choice == 1):
-            Say("Ah, my grandmaster! He\’s been prophesising your arrival since the beginning of time! He should be at the market.")
+            Say(__name__,"Ah, my grandmaster! He\’s been prophesising your arrival since the beginning of time! He should be at the market.")
         elif (choice ==2):
-            Say("This Prophetic Neo Graphics (PNG) depicts a way to move things. Here you go.")
+            Say(__name__,"This Prophetic Neo Graphics (PNG) depicts a way to move things. Here you go.")
             Pause()
             Show("How_To_Move_Things.png")
         elif (choice ==3):
-            Say("This PNG will show you how to change *FUNDAMENTAL* properties. Be careful with it! ")
+            Say(__name__,"This PNG will show you how to change *FUNDAMENTAL* properties. Be careful with it! ")
             Pause()
             Show("How_To_Change_Fundamental_Things.png")
         else:
-            Say("How kind of you. But alas I can only say what I was made to say.")
+            Say(__name__,"How kind of you. But alas I can only say what I was made to say.")
 
 
 def quest1():
@@ -127,4 +127,4 @@ def quest2():
     else:
         Say(__name__,"You have my utmost gratitude, O Explorer. Please, talk to me whenever you need to see the Prophetic Neo Graphics (PNG) again.")
         Pause()
-        Say("But for now, you should go see my grandmaster! He\’s been prophesising your arrival since the beginning of time… but he should be at the market at this time of day, so get yourself there now!")
+        Say(__name__,"But for now, you should go see my grandmaster! He\’s been prophesising your arrival since the beginning of time… but he should be at the market at this time of day, so get yourself there now!")
