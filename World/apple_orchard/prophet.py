@@ -42,7 +42,7 @@ def talk():
 def quest1():
 
     #check if quest is complete
-    applesInLocation = Search("Apple", CurrentLocation)
+    applesInLocation = Search("apple", CurrentLocation)
     if (applesInLocation):
         #update the state and reimport
         Update(State.__file__, "quest1complete","True")
