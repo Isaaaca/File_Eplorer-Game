@@ -1,7 +1,4 @@
 __pycache__/
-python-3.8.1/
 *.pyc
-/Laws/
-/World/
-/File_Explorer.py
-/Time/Saved/
+/python-3.8.1/
+/Time/

@@ -1,0 +1,2 @@
+run = "python3 -i -b File_Explorer.py"
+language = "python3"
