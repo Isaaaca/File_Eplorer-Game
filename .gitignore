@@ -2,3 +2,7 @@ __pycache__/
 *.pyc
 /python-3.8.1/
 /Time/
+/Continue.bat
+/Load_Game.bat
+/New_Game.bat
+/Save_Game.bat
