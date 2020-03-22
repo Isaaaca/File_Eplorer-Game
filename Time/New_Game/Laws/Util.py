@@ -48,6 +48,10 @@ def Ask(options):
 
     return choice
 
+def Pause():
+    input("\nPress Enter to continue...")
+    print()
+
 def Search(item, location):
 
     items = [f for f in os.listdir(location) if os.path.isfile(os.path.join(location, f))]
