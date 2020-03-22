@@ -58,6 +58,9 @@ def Search(item, location):
     items = [os.path.splitext(f)[0] for f in items if (item in f)]
     return items
 
+def Consume(item):
+    os.remove(item)
+    
 def Update(item, attribute, value):
     f = open(item,'r+')
     contents = f.readlines()
