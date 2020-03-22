@@ -1,10 +1,12 @@
 '''The Prophet
 
+He looks just like your grandfather!
+
 '''
 
 from Util import *
 import os, importlib
-import ProphetState as State
+import State
 
 
 isPerson = True
@@ -17,7 +19,24 @@ def talk():
     elif (not State.quest2complete) or (not State.quest2given):
         quest2()
     else:
-        Say("Developer","Game's over dude.")
+        Say("How can I help, Explorer?")
+        options = ["Where is the Grandmaster again?",
+        "How do I move things again?",
+        "How do I change FUNDAMENTAL properties again?",
+        "Nothing, I just wanted to talk."]
+        choice = Ask(options)
+        if (choice == 1):
+            Say("Ah, my grandmaster! He\’s been prophesising your arrival since the beginning of time! He should be at the market.")
+        elif (choice ==2):
+            Say("This Prophetic Neo Graphics (PNG) depicts a way to move things. Here you go.")
+            Pause()
+            Show("How_To_Move_Things.png")
+        elif (choice ==3):
+            Say("This PNG will show you how to change *FUNDAMENTAL* properties. Be careful with it! ")
+            Pause()
+            Show("How_To_Change_Fundamental_Things.png")
+        else:
+            Say("How kind of you. But alas I can only say what I was made to say.")
 
 
 def quest1():
@@ -40,6 +59,7 @@ def quest1():
             Ask(options)
 
             Say(__name__,"I have been earning for the apple that is upon the tree for ages past. But alas, I am but lines of code in this world, unable to move! This Prophetic Neo Graphics (PNG) depicts a way to move things, but I cannot understand it. Perhaps you could help? Please bring me the apple!")
+            Pause()
             Show("How_To_Move_Things.png")
             Update(State.__file__, "quest1given","True")
 
@@ -50,6 +70,7 @@ def quest1():
             "No thank you."]
             if (Ask(options)==1):
                 Say(__name__,"Here you go.")
+                Pause()
                 Show("How_To_Move_Things.png")
 
             Say(__name__,"Please Explorer, bring me the apple!")
@@ -69,7 +90,7 @@ def quest1():
 def quest2():
 
     #get the apples in the location
-    applesInLocation = Search("Apple", CurrentLocation)
+    applesInLocation = Search("apple", CurrentLocation)
     if (applesInLocation):
         for apple in applesInLocation:
             globals()[apple] = importlib.import_module(apple)
@@ -88,6 +109,7 @@ def quest2():
             Say(__name__,"Alas, woe is me! Are there no apples I can eat?")
             Wait(2)
             Say(__name__,"Explorer, if you really are who you are, you must be able to change the *FUNDAMENTAL* properties of this apple. This PNG will show you how.")
+            Pause()
             Show("How_To_Change_Fundamental_Things.png")
             Update(State.__file__, "quest2given","True")
 
@@ -98,9 +120,11 @@ def quest2():
             "No thank you."]
             if (Ask(options)==1):
                 Say(__name__,"Here you go.")
+                Pause()
                 Show("How_To_Change_Fundamental_Things.png")
 
             Say(__name__,"Please Explorer, make this apple Red!")
     else:
         Say(__name__,"You have my utmost gratitude, O Explorer. Please, talk to me whenever you need to see the Prophetic Neo Graphics (PNG) again.")
-        Say("Developer","You have come to the end of the tutorial/Demo! Thanks for playing!")
+        Pause()
+        Say("But for now, you should go see my grandmaster! He\’s been prophesising your arrival since the beginning of time… but he should be at the market at this time of day, so get yourself there now!")
