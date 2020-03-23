@@ -17,7 +17,7 @@ def talk():
 
     #checkState
     importlib.reload(State)
-    
+
     if(not State.quest3complete) or (not State.quest3given):
         quest3()
     elif (not State.quest4complete):
@@ -65,7 +65,6 @@ def quest3():
         Wait(2)
         Say(__name__,"Please take this basket and bring me 10 eggs and 5 bell peppers!")
         Update(State.__file__, "quest3given","True")
-        Update(State.__file__, "quest4given","True")
 
     else:
 
@@ -133,10 +132,14 @@ def quest4():
 
     #Everyone knows you don't count bellpeppers the same way you count eggs.
     bellpepperCounting= [1,2,3,4,6,9,11,7,13,12,8,10, 5,14,15,16,18,19,17]
-    Say(__name__,"...")
-    Wait(3)
-    Say(__name__,"Ahh! You scared me. Do you have my peppers?")
-    Pause()
+
+    if(State.quest4given):
+        Say(__name__,"...")
+        Wait(3)
+        Say(__name__,"Ahh! You scared me. Do you have my peppers?")
+        Pause()
+    else:
+        Update(State.__file__, "quest4given","True")
 
     if(os.path.exists(basket)):
         bellpepperInBasket = Search("bellpepper", basket)
