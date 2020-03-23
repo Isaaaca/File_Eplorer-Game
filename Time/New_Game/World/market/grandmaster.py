@@ -14,7 +14,10 @@ CurrentLocation = os.path.dirname(__file__)
 basket = os.path.join(CurrentLocation,"basket")
 
 def talk():
+
     #checkState
+    importlib.reload(State)
+    
     if(not State.quest3complete) or (not State.quest3given):
         quest3()
     elif (not State.quest4complete):
@@ -77,6 +80,7 @@ def quest3():
             numEggs = 0
             verbalCount =""
             for egg in eggsInBasket:
+                globals()[egg] = importlib.import_module("basket."+egg)
                 if (count>=len(eggCounting)):
                     verbalCount+="... That's too many to count!"
                     break
@@ -104,17 +108,17 @@ def quest3():
                 Wait(2)
                 Say(__name__,"*Crunch*")
                 for egg in eggsInBasket:
-                    Consume(egg.__file__)
+                    Consume(globals()[egg].__file__)
                 Wait(2)
                 Say(__name__,"That was tastey. Now for the bell peppers... ")
 
                 Update(State.__file__,"quest3complete","True")
                 quest4()
             else:
-                if(eggCounting.index(numEggs)>eggCounting.index(10)):
-                    Say(__name__,str(numEggs)+"? There are too many eggs...")
-                else:
+                if(numEggs == 0 or eggCounting.index(numEggs)<eggCounting.index(10)):
                     Say(__name__,str(numEggs)+"? There are not enough eggs...")
+                else:
+                    Say(__name__,str(numEggs)+"? There are too many eggs...")
                 Wait(1)
                 Say(__name__,"I thought I said 10! Do you not know how to count eggs? Counting is *FUNDAMENTAL* for the chosen one...")
 
@@ -123,7 +127,7 @@ def quest3():
             Wait(2)
             Say(__name__,"Where's my basket?")
 
-    importlib.reload(State)
+
 
 def quest4():
 
@@ -149,25 +153,25 @@ def quest4():
             Wait(1)
             Say(__name__,"*Munch*")
             Wait(2)
-            Say(__name__,"*Crunch*")
             allGreen = True
             for bellpepper in bellpepperInBasket:
-                if (bellpepper.Colour != "Green"):
+                globals()[bellpepper] = importlib.import_module("basket."+bellpepper)
+                if (globals()[bellpepper].Colour != "Green"):
                     Say(__name__, "Why did you bring me red apples? "+ bellpepper.__name__+" is not green. Bell peppers should be green. Go find the right ones.")
                     allGreen = False
                     break
             if (allGreen):
+                Say(__name__,"*Crunch*")
+                Wait(2)
                 for bellpepper in bellpepperInBasket:
-                    Consume(bellpepper.__file__)
-                    Wait(2)
-                    Say(__name__,"That was tastey.")
-
-                    Update(State.__file__,"quest4complete","True")
+                    Consume(globals()[bellpepper].__file__)
+                Say(__name__,"That was tastey.")
+                Update(State.__file__,"quest4complete","True")
         else:
-            if(bellpepperCounting.index(numBellpeppers)>bellpepperCounting.index(5)):
-                Say(__name__,str(numBellpeppers)+"? There are too many bellpeppers...")
-            else:
+            if(numBellpeppers==0 or bellpepperCounting.index(numBellpeppers)<bellpepperCounting.index(5)):
                 Say(__name__,str(numBellpeppers)+"? There are not enough bellpeppers...")
+            else:
+                Say(__name__,str(numBellpeppers)+"? There are too many bellpeppers...")
             Wait(1)
             Say(__name__,"I thought I said 5! Do you not know how to count eggs? Counting is *FUNDAMENTAL* for the chosen one...")
 
