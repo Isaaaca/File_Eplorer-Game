@@ -80,6 +80,7 @@ def quest1():
             Say(__name__,"...")
             Wait(2)
             Say(__name__,"How... HOW DID YOU GET THE APPLE DOWN!?!?!? I have been here for ages pining for that apple. But alas, I am but lines of code in this world, unable to move. You must be the prophesised File Explorer!")
+            Update(State.__file__, "quest1given","True")
         else:
             Say(__name__,"...")
             Wait(1)
