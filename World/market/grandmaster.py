@@ -160,7 +160,7 @@ def quest4():
             for bellpepper in bellpepperInBasket:
                 globals()[bellpepper] = importlib.import_module("basket."+bellpepper)
                 if (globals()[bellpepper].Colour != "Green"):
-                    Say(__name__, "Why did you bring me red apples? "+ bellpepper.__name__+" is not green. Bell peppers should be green. Go find the right ones.")
+                    Say(__name__, "Why did you bring me red apples? "+ bellpepper +" is not green. Bell peppers should be green. Go find the right ones.")
                     allGreen = False
                     break
             if (allGreen):
@@ -176,7 +176,7 @@ def quest4():
             else:
                 Say(__name__,str(numBellpeppers)+"? There are too many bellpeppers...")
             Wait(1)
-            Say(__name__,"I thought I said 5! Do you not know how to count eggs? Counting is *FUNDAMENTAL* for the chosen one...")
+            Say(__name__,"I thought I said 5! Do you not know how to count? Counting is *FUNDAMENTAL* for the chosen one...")
 
     else:
         Say(__name__,"Hmm...")
