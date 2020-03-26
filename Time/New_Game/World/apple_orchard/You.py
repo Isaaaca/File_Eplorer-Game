@@ -1,4 +1,5 @@
 import inspect, os
+from Util import GetChoice
 
 def help(command = ""):
     """COMMAND: HELP
@@ -16,7 +17,7 @@ def help(command = ""):
     else:
         print("Available Commands:")
         print("\"look()\"")
-        print("\"talk(<target>)\"")
+        print("\"talk()\"")
         print("\"help()\"")
         print("\nEnter \"help(<command_name>)\" to learn more about a command.")
         print("E.g. \"help(look)\",\"help(talk)\"")
@@ -46,13 +47,24 @@ def look(thing = ""):
 def talk(person = ""):
     """COMMAND: TALK
     For talking to people.
-    Enter "talk(<name>)" to enter into coversation with the person.
+    Enter "talk()" to view and select someone to talk to.
+    Enter "talk(<name>)" to directly enter into coversation with the person.
     """
     UpdateState()
+    print()
     if not person:
-        print("A name is required for this command.")
-        print()
+        persons = []
+        for interactable in interactables:
+            if (hasattr(globals()[interactable], 'isPerson')):
+                persons.append(interactable)
+        if (len(persons)==0):
+            print("There is no one to talk to here.\n")
+        else:
+            print("Who do you wish to talk to?")
+            target = GetChoice(persons)
+            print()
+            if (target != 0):
+                talk(globals()[persons[target-1]])
     else:
         if (person.isPerson):
-            print()
             person.talk()

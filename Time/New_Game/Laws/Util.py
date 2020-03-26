@@ -80,3 +80,31 @@ def Update(item, attribute, value):
 
 def Wait(t):
     time.sleep(t)
+
+def GetChoice(options):
+    wrapper = textwrap.TextWrapper()
+    wrapper.initial_indent = ' > '
+    wrapper.subsequent_indent = '   '
+
+    options.append('None')
+    counter = 1
+    for option in options:
+        text = str(counter)+'. '+option
+        text = wrapper.fill(text)
+        print(text+'\n')
+        counter+=1
+
+    choice = input("Enter Your choice: ")
+    validChoice = choice.isnumeric() and int(choice)<counter
+    while (not validChoice):
+        if (not choice.isnumeric()):
+            choice = input("Please enter a number: ")
+        elif (not int(choice)<counter):
+            choice = input("Please enter a number from 1~"+ str(counter-1)+": ")
+        validChoice = choice.isnumeric() and int(choice)<counter
+
+
+    choice = int(choice)
+    if(options[choice-1] == 'None'):
+        choice = 0
+    return choice
