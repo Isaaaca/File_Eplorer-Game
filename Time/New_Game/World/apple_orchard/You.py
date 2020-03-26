@@ -31,11 +31,13 @@ def look(thing = ""):
     UpdateState()
     print()
     if not thing:
-        print('You are curently in ' + CurrentLocation.__name__)
+        print('You are curently in ' + CurrentLocation.__name__ + '\n')
+        print('The following things/people are here:')
         for interactable in interactables:
             print(interactable)
     else:
         print(inspect.getdoc(thing))
+    print("\nEnter \"look(<name>)\" to take a closer look at something.")
     print()
 
 

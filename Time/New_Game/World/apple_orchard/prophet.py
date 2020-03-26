@@ -58,7 +58,7 @@ def quest1():
             "I don\'t think so..."]
             Ask(options)
 
-            Say(__name__,"I have been earning for the apple that is upon the tree for ages past. But alas, I am but lines of code in this world, unable to move! This Prophetic Neo Graphics (PNG) depicts a way to move things, but I cannot understand it. Perhaps you could help? Please bring me the apple!")
+            Say(__name__,"I have been yearning for the apple that is upon the tree for ages past. But alas, I am but lines of code in this world, unable to move! This Prophetic Neo Graphics (PNG) depicts a way to move things, but I cannot understand it. Perhaps you could help? Please bring me the apple!")
             Pause()
             Show("How_To_Move_Things.png")
             Update(State.__file__, "quest1given","True")

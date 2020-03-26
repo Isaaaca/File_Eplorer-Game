@@ -16,7 +16,7 @@ def Say(name, text):
 
     print(name)
     text = textwrap.fill(text)
-    text = textwrap.indent(text, ' # ', lambda line: True)
+    text = textwrap.indent(text, ' | ', lambda line: True)
     print(text+'\n')
 
 def Ask(options):
@@ -60,7 +60,7 @@ def Search(item, location):
 
 def Consume(item):
     os.remove(item)
-    
+
 def Update(item, attribute, value):
     f = open(item,'r+')
     contents = f.readlines()
