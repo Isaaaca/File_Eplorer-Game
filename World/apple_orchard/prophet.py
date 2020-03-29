@@ -58,7 +58,7 @@ def quest1():
             "I don\'t think so..."]
             Ask(options)
 
-            Say(__name__,"I have been earning for the apple that is upon the tree for ages past. But alas, I am but lines of code in this world, unable to move! This Prophetic Neo Graphics (PNG) depicts a way to move things, but I cannot understand it. Perhaps you could help? Please bring me the apple!")
+            Say(__name__,"I have been yearning for the apple that is upon the tree for ages past. But alas, I am but lines of code in this world, unable to move! This Prophetic Neo Graphics (PNG) depicts a way to move things, but I cannot understand it. Perhaps you could help? Please bring me the apple!")
             Pause()
             Show("How_To_Move_Things.png")
             Update(State.__file__, "quest1given","True")
@@ -128,4 +128,9 @@ def quest2():
     else:
         Say(__name__,"You have my utmost gratitude, O Explorer. Please, talk to me whenever you need to see the Prophetic Neo Graphics (PNG) again.")
         Pause()
-        Say(__name__,"But for now, you should go see my grandmaster! He\’s been prophesising your arrival since the beginning of time… but he should be at the market at this time of day, so get yourself there now!")
+        Say(__name__,"But for now, you should go see my grandmaster! He’s been prophesising your arrival since the beginning of time… but he should be at the market at this time of day, so get yourself there now!")
+
+lastWords ="""\
+Ry"*my vn*S*o!o|*~rkxu*$y 8
+S*kw*psxkvv$*p|oo888\
+"""
