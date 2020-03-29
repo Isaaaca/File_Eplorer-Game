@@ -22,8 +22,10 @@ def talk():
         quest3()
     elif (not State.quest4complete):
         quest4()
+    elif (not State.CanLiberate()):
+        Say(__name__,"You have fufilled all my desires. Now the poultry seller needs you!")
     else:
-        Say("Developer","Game's over dude.")
+        Say(__name__,"You have done it!")
 
 def Count(items, countingMethod):
     count = 0
@@ -170,6 +172,7 @@ def quest4():
                     Consume(globals()[bellpepper].__file__)
                 Say(__name__,"That was tastey.")
                 Update(State.__file__,"quest4complete","True")
+                Say(__name__, "Wow, I’m impressed! But while you were gone, a tragedy happened... You see that poultry seller over there? She found that her poultry has gone bad! As the Explorer, you should go over and help her! Go talk to her. ")
         else:
             if(numBellpeppers==0 or bellpepperCounting.index(numBellpeppers)<bellpepperCounting.index(5)):
                 Say(__name__,str(numBellpeppers)+"? There are not enough bellpeppers...")
