@@ -1,5 +1,6 @@
 import inspect, os
-from Util import GetChoice
+import State
+from Util import GetChoice, Say
 
 def help(command = ""):
     """COMMAND: HELP
@@ -68,3 +69,25 @@ def talk(person = ""):
     else:
         if (person.isPerson):
             person.talk()
+
+
+def liberate(target):
+    """COMMAND: LIBERATE
+    For liberating persons that no longer have woes in the world.
+    Enter "talk(<name>)" to liberate a person.
+    """
+    UpdateState()
+    importlib.reload(State)
+    if (target.isPerson):
+        if(State.CanLiberate()):
+            for line in target.lastWords.split('\n'):
+                finalWords = ""
+                for c in line:
+                        finalWords+=chr((ord(c)-42)%95+32)
+
+                Say(target.__name__,finalWords)
+            os.remove(target.__file__)
+        else:
+            print("\nIt seems there is still unease in the world, and you are unable to liberate the "+ target.__name__+".\n")
+    else:
+        print("\n"+target.__name__+" is not a person and cannot be liberated.\n")
