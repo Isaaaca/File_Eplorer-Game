@@ -59,8 +59,14 @@ def quest5():
                 poultryInLocation = Search("poultry", CurrentLocation)
                 for poultry in poultryInLocation:
                     if (not "seller" in poultry):
-                        globals()[poultry] = importlib.import_module(poultry)
-                        if (globals()[poultry].Colour.lower() != "#ffdab9"):
+                        if (poultry in globals()):
+                            importlib.reload(globals()[poultry])
+                        else:
+                            globals()[poultry] = importlib.import_module(poultry)
+
+                        if(not '#' in globals()[poultry].Colour):
+                            Say(__name__, "What did you do to this "+poultry+"? You were supposed to change the hex to PeachPuff, now there isn't even a hex at all!")
+                        elif (globals()[poultry].Colour.lower() != "#ffdab9"):
                             Say(__name__, "This "+poultry+" is not PeachPuff, it is "+ globals()[poultry].Colour+". It still has the wrong hex!")
                         else:
                             Update(State.__file__, "quest5complete", "True")
