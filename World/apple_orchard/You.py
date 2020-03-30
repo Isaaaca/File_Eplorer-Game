@@ -26,7 +26,7 @@ def help(command = ""):
 
 def look(thing = ""):
     """COMMAND: LOOK
-    For looking at obects, places or people.
+    For looking at objects, places or people.
     Enter "look()" to look at your surroundings.
     Enter "look(<name>)" to take a closer look at something.
     """
