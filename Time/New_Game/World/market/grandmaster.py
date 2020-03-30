@@ -160,7 +160,10 @@ def quest4():
             Wait(2)
             allGreen = True
             for bellpepper in bellpepperInBasket:
-                globals()[bellpepper] = importlib.import_module("basket."+bellpepper)
+                if (bellpepper in globals()):
+                    importlib.reload(globals()[bellpepper])
+                else:
+                    globals()[bellpepper] = importlib.import_module("basket."+bellpepper)
                 if (globals()[bellpepper].Colour != "Green"):
                     Say(__name__, "Why did you bring me red apples? "+ bellpepper +" is not green. Bell peppers should be green. Go find the right ones.")
                     allGreen = False
