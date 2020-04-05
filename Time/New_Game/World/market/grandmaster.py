@@ -166,7 +166,7 @@ def quest4():
                 else:
                     globals()[bellpepper] = importlib.import_module("basket."+bellpepper)
                 if (globals()[bellpepper].Colour != "Green"):
-                    Say(__name__, "Why did you bring me red apples? "+ bellpepper +" is not green. Bell peppers should be green. Go find the right ones.")
+                    Say(__name__, "Why did you bring me red apples? "+ bellpepper +" is not *FUNDAMENTALLY* green. Bell peppers should be green. Go find the right ones.")
                     allGreen = False
                     break
             if (allGreen):
