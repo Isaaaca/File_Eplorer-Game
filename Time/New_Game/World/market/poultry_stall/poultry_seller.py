@@ -22,7 +22,7 @@ def talk():
     elif (not State.quest6complete):
         quest6()
     else:
-        Say("Developer","Game's over dude.")
+        Say(__name__,"Thanks for fixing my husband, I’m so relieved he’s back to normal! I heard you were on your way to see the prophet? Go on!")
 
 
 def quest5():
@@ -99,8 +99,9 @@ def quest6():
         "Did you hear that?",
         "Ma'am, standback."]
         Ask(options)
-        Say(__name__, "It’s my husband... He's a quest that we have not implemented yet. Stay tuned for updates!")
+        Say(__name__, "It’s my husband... He’s been a little looney recently so I kept him away from the stall. It seems he has a very specific train of thought. Sometimes I feel I’m so close to getting through to him...")
+        Wait(2);
+        Say(__name__," then I’d mess up and he goes back to repeating the same line over and over again. Why don’t you try talking to him? ")
         Update(State.__file__, "quest6given", "True")
-        Update(State.__file__, "quest6complete", "True")
     else:
-        Say("Developer","Game's over dude.")
+        Say(__name__,"Have you talk to my husband yet? Remember, he has a very specific train of thought... I'm starting to think it might be *FUNDAMENTAL*...")
