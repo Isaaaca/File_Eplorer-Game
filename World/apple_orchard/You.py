@@ -22,6 +22,7 @@ def help(command = ""):
         print("\"help()\"")
         print("\nEnter \"help(<command_name>)\" to learn more about a command.")
         print("E.g. \"help(look)\",\"help(talk)\"")
+        print("Remember to look before you do anything when you move to a different location!")
     print()
 
 def look(thing = ""):
@@ -33,13 +34,14 @@ def look(thing = ""):
     UpdateState()
     print()
     if not thing:
-        print('You are curently in ' + CurrentLocation.__name__ + '\n')
+        print('You are currently in ' + CurrentLocation.__name__ + '\n')
         print('The following things/people are here:')
         for interactable in interactables:
             print(interactable)
     else:
         print(inspect.getdoc(thing))
     print("\nEnter \"look(<name>)\" to take a closer look at something.")
+    print("Enter \"talk(<name>)\" to have a conversation with someone")
     print()
 
 
@@ -49,7 +51,7 @@ def talk(person = ""):
     """COMMAND: TALK
     For talking to people.
     Enter "talk()" to view and select someone to talk to.
-    Enter "talk(<name>)" to directly enter into coversation with the person.
+    Enter "talk(<name>)" to directly enter into conversation with the person.
     """
     UpdateState()
     print()
@@ -74,7 +76,7 @@ def talk(person = ""):
 def liberate(target):
     """COMMAND: LIBERATE
     For liberating persons that no longer have woes in the world.
-    Enter "talk(<name>)" to liberate a person.
+    Enter "liberate(<name>)" to liberate a person.
     """
     UpdateState()
     importlib.reload(State)

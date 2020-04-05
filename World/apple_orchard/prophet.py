@@ -1,6 +1,7 @@
 '''The Prophet
 
 He looks just like your grandfather!
+Maybe you should talk to him!
 
 '''
 
@@ -34,10 +35,11 @@ def talk():
         options = ["Where is the Grandmaster again?",
         "How do I move things again?",
         "How do I change FUNDAMENTAL properties again?",
+        "What am I supposed to in this world?"
         "Nothing, I just wanted to talk."]
         choice = Ask(options)
         if (choice == 1):
-            Say(__name__,"Ah, my grandmaster! He\’s been prophesising your arrival since the beginning of time! He should be at the market.")
+            Say(__name__,"Ah, my grandmaster! He\’s been prophesising your arrival since the beginning of time! He should be at the market. Since you moved the apple, you surely can move yourself there.")
         elif (choice ==2):
             Say(__name__,"This Prophetic Neo Graphics (PNG) depicts a way to move things. Here you go.")
             Pause()
@@ -46,6 +48,8 @@ def talk():
             Say(__name__,"This PNG will show you how to change *FUNDAMENTAL* properties. Be careful with it! ")
             Pause()
             Show("How_To_Change_Fundamental_Things.png")
+        elif (choice == 4):
+            Say(__name__,"Our evil creators have made our lives very, very difficult! Now that you’ve come, it is your calling to solve our mortal coils and fix this strange world! Only then can we all be liberated...")
         else:
             Say(__name__,"How kind of you. But alas I can only say what I was made to say.")
 
@@ -73,6 +77,7 @@ def quest1():
             Pause()
             Show("How_To_Move_Things.png")
             Update(State.__file__, "quest1given","True")
+            Say(__name__,"Come back and talk to me when you’re done!")
 
         else:
             Say(__name__,"Do you want to see the PNG again?")
@@ -84,7 +89,7 @@ def quest1():
                 Pause()
                 Show("How_To_Move_Things.png")
 
-            Say(__name__,"Please Explorer, bring me the apple!")
+            Say(__name__,"Please Explorer, bring me the apple!Come back and talk to me when you’re done.")
     else:
         if (not State.quest1given):
             Say(__name__,"Hail Adventurer!")
@@ -120,7 +125,7 @@ def quest2():
         if (not State.quest2given):
             Say(__name__,"Alas, woe is me! Are there no apples I can eat?")
             Wait(2)
-            Say(__name__,"Explorer, if you really are who you are, you must be able to change the *FUNDAMENTAL* properties of this apple. This PNG will show you how.")
+            Say(__name__,"Explorer, if you really are who you are, you must be able to change the *FUNDAMENTAL* properties of this apple. This PNG will show you how. Come back and talk to me when you’re done!")
             Pause()
             Show("How_To_Change_Fundamental_Things.png")
             Update(State.__file__, "quest2given","True")
@@ -135,11 +140,11 @@ def quest2():
                 Pause()
                 Show("How_To_Change_Fundamental_Things.png")
 
-            Say(__name__,"Please Explorer, make this apple Red!")
+            Say(__name__,"Please Explorer, make this apple Red! Come back and talk to me when you’re done.")
     else:
-        Say(__name__,"You have my utmost gratitude, O Explorer. Please, talk to me whenever you need to see the Prophetic Neo Graphics (PNG) again.")
+        Say(__name__,"You have my utmost gratitude, O Explorer. Our evil creators have made our lives very, very difficult! Now that you’ve come, it is your calling to solve our mortal coils and fix this strange world! Only then can we all be liberated... Please, talk to me whenever you need to see the Prophetic Neo Graphics (PNG) again.")
         Pause()
-        Say(__name__,"But for now, you should go see my grandmaster! He’s been prophesising your arrival since the beginning of time… but he should be at the market at this time of day, so get yourself there now!")
+        Say(__name__,"But for now, you should go see my grandmaster! He’s been prophesising your arrival since the beginning of time… but he should be at the market at this time of day, *YOU* should go there now and talk to him!")
 
 lastWords ="""\
 ^rkxu*$y *py|*xy~*py|qo~~sxq*wo8*

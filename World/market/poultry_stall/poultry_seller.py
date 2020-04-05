@@ -77,7 +77,7 @@ def quest5():
             elif (reply==2):
                 Say(__name__,"The best poultry are hexed to be PeachPuff colored!")
             elif (reply == 3):
-                Say(__name__,"Not all hexes are bad. I only know that the color of the poultry can change depending on how it is hexed. I heard rumors of an \"Interweb\" where information can be found. I wonder what kind of spider weaved such thing?")
+                Say(__name__,"Hexes are *FUNDAMENTAL*. But not all hexes are bad. I only know that the color of the poultry can change depending on how it is hexed. I heard rumors of an \"Interweb\" where information can be found. I wonder what kind of spider weaved such thing?")
 
             if (reply!=4):
                 Pause()
