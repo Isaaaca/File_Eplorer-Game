@@ -22,7 +22,9 @@ def talk():
     elif (not State.quest6complete):
         quest6()
     else:
-        Say(__name__,"Thanks for fixing my husband, I’m so relieved he’s back to normal! I heard you were on your way to see the prophet? Go on!")
+        Say(__name__,"Thanks for fixing my husband, I’m so relieved he’s back to normal!")
+        if (State.CanLiberate()):
+            Say(__name__,"I heard you were on your way to see the prophet? Go on!")
 
 
 def quest5():
@@ -105,3 +107,8 @@ def quest6():
         Update(State.__file__, "quest6given", "True")
     else:
         Say(__name__,"Have you talk to my husband yet? Remember, he has a very specific train of thought... I'm starting to think it might be *FUNDAMENTAL*...")
+
+lastWords ="""\
+^rkxu*$y *}y*w mr*py|*o!o|$~rsxq+*Ry"*mkx*S*o!o|*~rkxu*$y *oxy qrI*
+S*q o}}*kvv*w$*zy v~|$*s}*$y |}*p|yw*xy"*yx+*\
+"""

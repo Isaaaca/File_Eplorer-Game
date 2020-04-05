@@ -89,3 +89,9 @@ def quest6():
             Say(__name__, "Wait... you’ve solved everyone’s woes... the prophet prophesied that you’ll liberate all of us! Why are we all still here? You have to go to him and find out why!")
         else:
             Say(__name__, "Wait... there's still someone that needs your help! Why are you still here? Go help them!")
+
+
+lastWords ="""\
+Kr888888*^ro*z|yzrom$*s}*~| o8*
+ao*}rkvv*woo~*kqksx6*kxn*xo#~*~swo*S1vv*lo*~ro*O#zvy|o|+\
+"""

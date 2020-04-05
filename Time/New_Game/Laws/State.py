@@ -10,6 +10,7 @@ quest5given = False
 quest5complete = False
 quest6given = False
 quest6complete = False
+spokenToProphetOnLiberation = False
 
 def CanLiberate():
     for att in globals():
