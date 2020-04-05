@@ -73,7 +73,7 @@ def quest3():
 
         Say(__name__,"...")
         Wait(3)
-        Say(__name__,"Ahh! You scared me. Do you have my eggs and peppers?")
+        Say(__name__,"Ahh! You scared me. Do you have my eggs and bell peppers?")
         Pause()
 
         if(os.path.exists(basket)):
@@ -112,7 +112,7 @@ def quest3():
                 for egg in eggsInBasket:
                     Consume(globals()[egg].__file__)
                 Wait(2)
-                Say(__name__,"That was tastey. Now for the bell peppers... ")
+                Say(__name__,"That was tasty. Now for the bell peppers... ")
 
                 Update(State.__file__,"quest3complete","True")
                 quest4()
@@ -139,7 +139,7 @@ def quest4():
     if(State.quest4given):
         Say(__name__,"...")
         Wait(3)
-        Say(__name__,"Ahh! You scared me. Do you have my peppers?")
+        Say(__name__,"Ahh! You scared me. Do you have my bell peppers?")
         Pause()
     else:
         Update(State.__file__, "quest4given","True")
@@ -174,7 +174,7 @@ def quest4():
                 Wait(2)
                 for bellpepper in bellpepperInBasket:
                     Consume(globals()[bellpepper].__file__)
-                Say(__name__,"That was tastey.")
+                Say(__name__,"That was tasty.")
                 Update(State.__file__,"quest4complete","True")
                 Say(__name__, "Wow, I’m impressed! But while you were gone, a tragedy happened... You see that poultry seller over there? She found that her poultry has gone bad! As the Explorer, you should go over and help her! Go talk to her. ")
         else:
