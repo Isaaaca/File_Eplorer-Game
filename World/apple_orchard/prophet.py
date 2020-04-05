@@ -14,10 +14,21 @@ CurrentLocation = os.path.dirname(__file__)
 
 def talk():
     #checkState
+    importlib.reload(State)
     if(not State.quest1complete) or (not State.quest1given):
         quest1()
     elif (not State.quest2complete) or (not State.quest2given):
         quest2()
+    elif (State.CanLiberate()):
+        if( not State.spokenToProphetOnLiberation):
+            Say(__name__, "You’ve returned earlier than expected! It must have been a rough journey, O Explorer. But... ")
+            Wait(2)
+            Say(__name__,"have you solved everyone’s problems? You have? Then why is the world still the same? Hmm... this baffles me as well...")
+            Pause()
+            Say(__name__,"I don’t have the answer... But you ARE the file explorer! The answer must lie within You!")
+            Update(State.__file__, "spokenToProphetOnLiberation","True")
+        else:
+            Say(__name__,"The answer must lie within You! Liberation must be *FUNDAMENTAL* for You!")
     else:
         Say(__name__,"How can I help, Explorer?")
         options = ["Where is the Grandmaster again?",
@@ -131,6 +142,7 @@ def quest2():
         Say(__name__,"But for now, you should go see my grandmaster! He’s been prophesising your arrival since the beginning of time… but he should be at the market at this time of day, so get yourself there now!")
 
 lastWords ="""\
-Ry"*my vn*S*o!o|*~rkxu*$y 8
-S*kw*psxkvv$*p|oo888\
+^rkxu*$y *py|*xy~*py|qo~~sxq*wo8*
+S1!o*vs!on*"ovv*lo$yxn*w$*$ok|}6*wo~*kvv*usxn}*yp*zoyzvo*l ~*xyxo*yp*~row*"svv*o!o|*wk~mr* z*~y*$y 8
+Pk|o"ovv*nok|*O#zvy|o|+*^ro*"y|vn*s}*kvv*$y |}*~y*o#zvy|o*xy"+\
 """

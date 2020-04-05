@@ -25,7 +25,8 @@ def talk():
     elif (not State.CanLiberate()):
         Say(__name__,"You have fufilled all my desires. Now the poultry seller needs you!")
     else:
-        Say(__name__,"You have done it!")
+        Wait(3)
+        Say(__name__,"Ahhhhhhhhhhh.....!!! Why are you here again......? Why am I still here......? Only the prophet can help you now!")
 
 def Count(items, countingMethod):
     count = 0
@@ -188,3 +189,11 @@ def quest4():
         Say(__name__,"Hmm...")
         Wait(2)
         Say(__name__,"Where's my basket?")
+
+
+
+lastWords ="""\
+Y*PSvo*O#zvy|o|888*
+^ro*~swo*rk}*mywo*py|*wo*~y*nozk|~*~rs}*"y|vn8*
+S1vv*kv"k$}*|owowlo|*~ro*~k}~o*yp*~ro*oqq}*kxn*lovv*zozzo|}*$y *ly qr~*py|*wo888*Pk|o"ovv+*\
+"""

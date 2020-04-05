@@ -70,7 +70,7 @@ def talk(person = ""):
         if (person.isPerson):
             person.talk()
 
-
+#this is the answer, go liberate everyone O Explorer!
 def liberate(target):
     """COMMAND: LIBERATE
     For liberating persons that no longer have woes in the world.
