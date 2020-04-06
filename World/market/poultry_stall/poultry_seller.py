@@ -84,7 +84,7 @@ def quest5():
 
 
         if (State.quest5complete):
-            Say(__name__,"Thank you! Oh, what would I have done without you! I\’m eternally grateful for your help!")
+            Say(__name__,"Thank you! Oh, what would I have done without you! I'm eternally grateful for your help!")
             quest6()
 
 
