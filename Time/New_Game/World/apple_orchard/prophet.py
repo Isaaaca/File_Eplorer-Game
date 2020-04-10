@@ -115,6 +115,7 @@ def quest2():
                 Say(__name__, "This "+apple+" is not Red, it is "+ globals()[apple].Colour)
             else:
                 Update(State.__file__, "quest2complete", "True")
+                Update(State.__file__, "quest2given", "True")
     else:
         Say(__name__,"Where did the apple go!? Please Explorer, let me have my apple. Do not torture me so! ")
         return
