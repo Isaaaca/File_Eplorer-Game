@@ -36,7 +36,7 @@ def talk():
         options = ["Where is the Grandmaster again?",
         "How do I move things again?",
         "How do I change FUNDAMENTAL properties again?",
-        "What am I supposed to do in this world?"
+        "What am I supposed to do in this world?",
         "Nothing, I just wanted to talk."]
         choice = Ask(options)
         if (choice == 1):
