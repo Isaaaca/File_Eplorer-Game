@@ -9,6 +9,7 @@ from Util import *
 import os, importlib
 import State
 
+#Hey are you reading MY fundamental properties!?
 
 isPerson = True
 CurrentLocation = os.path.dirname(__file__)
@@ -26,7 +27,7 @@ def talk():
             Wait(2)
             Say(__name__,"have you solved everyone’s problems? You have? Then why is the world still the same? Hmm... this baffles me as well...")
             Pause()
-            Say(__name__,"I don’t have the answer... But you ARE the file explorer! The answer must lie within You!")
+            Say(__name__,"I don’t have the answer... But YOU are the file explorer! The answer must lie within You!")
             Update(State.__file__, "spokenToProphetOnLiberation","True")
         else:
             Say(__name__,"The answer must lie within You! Liberation must be *FUNDAMENTAL* for You!")
@@ -35,7 +36,7 @@ def talk():
         options = ["Where is the Grandmaster again?",
         "How do I move things again?",
         "How do I change FUNDAMENTAL properties again?",
-        "What am I supposed to in this world?"
+        "What am I supposed to do in this world?"
         "Nothing, I just wanted to talk."]
         choice = Ask(options)
         if (choice == 1):
@@ -51,6 +52,7 @@ def talk():
         elif (choice == 4):
             Say(__name__,"Our evil creators have made our lives very, very difficult! Now that you’ve come, it is your calling to solve our mortal coils and fix this strange world! Only then can we all be liberated...")
         else:
+            #to be honest I just want you to liberate me, I'm not here for your entertainment...
             Say(__name__,"How kind of you. But alas I can only say what I was made to say.")
 
 
@@ -109,6 +111,7 @@ def quest2():
     #get the apples in the location
     applesInLocation = Search("apple", CurrentLocation)
     if (applesInLocation):
+        #why do I look at all the apples when I only want one lol...
         for apple in applesInLocation:
             globals()[apple] = importlib.import_module(apple)
             if (globals()[apple].Colour != "Red"):
@@ -145,10 +148,10 @@ def quest2():
     else:
         Say(__name__,"You have my utmost gratitude, O Explorer. Our evil creators have made our lives very, very difficult! Now that you’ve come, it is your calling to solve our mortal coils and fix this strange world! Only then can we all be liberated... Please, talk to me whenever you need to see the Prophetic Neo Graphics (PNG) again.")
         Pause()
-        Say(__name__,"But for now, you should go see my grandmaster! He’s been prophesising your arrival since the beginning of time… but he should be at the market at this time of day, *YOU* should go there now and talk to him!")
+        Say(__name__,"But for now, you should go see my grandmaster! He’s been prophesising your arrival since the beginning of time… but he should be at the market at this time of day, *YOU* should go there now and talk to him! You can move yourself there now like how you moved the apple!")
 
 lastWords ="""\
-^rkxu*$y *py|*xy~*py|qo~~sxq*wo8*
+^rkxu*$y *py|*kvv*$y *rk!o*nyxo*py|* }8*
 S1!o*vs!on*"ovv*lo$yxn*w$*$ok|}6*wo~*kvv*usxn}*yp*zoyzvo*l ~*xyxo*yp*~row*"svv*o!o|*wk~mr* z*~y*$y 8
-Pk|o"ovv*nok|*O#zvy|o|+*^ro*"y|vn*s}*kvv*$y |}*~y*o#zvy|o*xy"+\
+Pk|o"ovv*nok|*O#zvy|o|+\
 """

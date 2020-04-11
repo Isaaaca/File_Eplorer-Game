@@ -3,7 +3,7 @@
 Surprisingly, he does not look like your father.
 
 '''
-
+#I can't believe they actually called me quack just cause I'm "crazy" and the husband of a poultry seller. Dumb pun.
 from Util import *
 import os, importlib
 import State
@@ -45,6 +45,7 @@ def quest6():
 
     options = list(conversation)
 
+    ######Who can follow this train of thought?########
     trainOfThought = [4,1,2,1]
 
     Say(__name__,"*thump* *thump* ")
@@ -78,6 +79,7 @@ def quest6():
 
     if (not followingTrainOfThought):
         Say(__name__, "We all remain trapped in this eternal madness... until I find the real Explorer, the only one who can communicate with me in the predestined way!")
+        #I shall trap you in this conversation loop and drag you into madness myself lol.
     else:
         Update(State.__file__, "quest6complete", "True")
         importlib.reload(State)
