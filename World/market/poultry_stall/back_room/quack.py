@@ -82,15 +82,16 @@ def quest6():
         #I shall trap you in this conversation loop and drag you into madness myself lol.
     else:
         Update(State.__file__, "quest6complete", "True")
+        os.rename(__file__, os.path.dirname(__file__)+"\\messenger.py")
         importlib.reload(State)
-        Say(__name__, "If it be true, salvation is upon us! I was driven to madness by my despair of your absence… I can finally let everyone know that you have come. Now all that’s left is to wait and see the miracles that you can do...")
+        Say("messenger", "If it be true, salvation is upon us! I was driven to madness by my despair of your absence… I can finally let everyone know that you have come. Now all that’s left is to wait and see the miracles that you can do...")
         Wait(1)
-        Say(__name__, "...")
+        Say("messenger", "...")
         Wait(2)
         if (State.CanLiberate()):
-            Say(__name__, "Wait... you’ve solved everyone’s woes... the prophet prophesied that you’ll liberate all of us! Why are we all still here? You have to go to him and find out why!")
+            Say("messenger", "Wait... you’ve solved everyone’s woes... the prophet prophesied that you’ll liberate all of us! Why are we all still here? You have to go to him and find out why!")
         else:
-            Say(__name__, "Wait... there's still someone that needs your help! Why are you still here? Go help them!")
+            Say("messenger", "Wait... there's still someone that needs your help! Why are you still here? Go help them!")
 
 
 lastWords ="""\
