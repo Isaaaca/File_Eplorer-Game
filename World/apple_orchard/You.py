@@ -1,6 +1,6 @@
 import inspect, os
 import State
-from Util import GetChoice, Say
+from Util import *
 
 def help(command = ""):
     """COMMAND: HELP
@@ -22,7 +22,8 @@ def help(command = ""):
         print("\"help()\"")
         print("\nEnter \"help(<command_name>)\" to learn more about a command.")
         print("E.g. \"help(look)\",\"help(talk)\"")
-        print("Remember to look before you do anything when you move to a different location!")
+        print("Remember to look before you do anything when you move to a different location!\n")
+        print("Don't forget to try out all the commands!")
     print()
 
 def look(thing = ""):
@@ -86,10 +87,28 @@ def liberate(target):
                 finalWords = ""
                 for c in line:
                         finalWords+=chr((ord(c)-42)%95+32)
-
                 Say(target.__name__,finalWords)
+
+            Update(State.__file__, target.__name__ + "_liberated","True")
             os.remove(target.__file__)
+            importlib.reload(State)
+
+            if(State.allLiberated()):
+                Wait(5)
+                Pause()
+                print("!!!!!!GAME OVER!!!!!!!\N")
+                for line in GameOverMsg.split('\n'):
+                    finalWords = ""
+                    for c in line:
+                            finalWords+=chr((ord(c)-42)%95+32)
+                    Say("Developers",finalWords)
         else:
             print("\nIt seems there is still unease in the world, and you are unable to liberate the "+ target.__name__+".\n")
     else:
         print("\n"+target.__name__+" is not a person and cannot be liberated.\n")
+
+
+GameOverMsg ="""\
+Q|oo~sxq}*zvk$o|6*"o*k|o*~ro*o!sv*m|ok~y|}*~rk~*~ro*z|yzro~*}zyuo*yp8*Qyyn*tyl*yx*,vslo|k~sxq,*o!o|$yxo*7*$y *lk}smkvv$*t }~*novo~on*~ros|*psvo}8*cy *nsnx1~*xoon*~y*}yv!o*kx$*n wl*z %%vo*~y*novo~o*psvo}8*L ~*$y *nsn8*Ryzo*~rk~*~swo*"k}*"ovv*}zox~6*kxn*$y *poov*lo~~o|*kly ~*$y |}ovp*xy"8*D3
+Xy"*~ro*qkwo*rk}*oxnon6*s~1}*t }~*$y *kxn*~ro*"y|vn*vop~*~y*o#zvy|o8*Yp*my |}o6*$y *mkx*}~k|~*k*xo"*qkwo*kxn*~|$*~y*}yv!o*~ro*z %%vo}*sx*k*nsppo|ox~*"k$8*O!o|$yxo*"svv*lo*lkmu*kqksx6*kxn*~ro$*mkx*loq*$y *kxn*~rkxu*$y *kvv*y!o|*kqksx+*cy 1vv*lo*} |o*~y*poov*o!ox*lo~~o|*kly ~*$y |}ovp8*E3\
+"""

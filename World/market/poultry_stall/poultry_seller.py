@@ -68,6 +68,7 @@ def quest5():
 
                         if(not '#' in globals()[poultry].Colour):
                             Say(__name__, "What did you do to this "+poultry+"? You were supposed to change the hex to PeachPuff, now there isn't even a hex at all!")
+                        #I actually know the hex code, why can't I just tell them directly?
                         elif (globals()[poultry].Colour.lower() != "#ffdab9"):
                             Say(__name__, "This "+poultry+" is not PeachPuff, it is "+ globals()[poultry].Colour+". It still has the wrong hex!")
                         else:
@@ -101,9 +102,9 @@ def quest6():
         "Did you hear that?",
         "Ma'am, standback."]
         Ask(options)
-        Say(__name__, "It’s my husband... He’s been a little looney recently so I kept him away from the stall. It seems he has a very specific train of thought. Sometimes I feel I’m so close to getting through to him...")
+        Say(__name__, "It’s my husband... He’s been a little looney recently so I locked him in the backroom. It seems he has a very specific *train of thought*. Sometimes I feel I’m so close to getting through to him...")
         Wait(2);
-        Say(__name__," then I’d mess up and he goes back to repeating the same line over and over again. Why don’t you try talking to him? ")
+        Say(__name__," then I’d mess up and he goes back to repeating the same line over and over again. Why don’t you go in there and try talking to him? ")
         Update(State.__file__, "quest6given", "True")
     else:
         Say(__name__,"Have you talk to my husband yet? Remember, he has a very specific train of thought... I'm starting to think it might be *FUNDAMENTAL*...")

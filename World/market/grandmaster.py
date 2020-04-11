@@ -61,12 +61,12 @@ def quest3():
         Say(__name__,"You must be the Explorer...")
         Wait(2)
         Say(__name__,"...")
-        Wait(2)
+        Wait(2) #I love testing other people's patience heheh
         Say(__name__,"... but right now I need my proteins and fibres...")
         Wait(2)
         Say(__name__,"...")
         Wait(2)
-        Say(__name__,"Please take this basket and bring me 10 eggs and 5 bell peppers!")
+        Say(__name__,"Please take this basket and bring me 10 eggs and 5 bell peppers! Come back and talk to me when you're done.")
         Update(State.__file__, "quest3given","True")
 
     else:
@@ -111,6 +111,7 @@ def quest3():
                 Say(__name__,"*Crunch*")
                 for egg in eggsInBasket:
                     Consume(globals()[egg].__file__)
+                    #I eat raw eggs. Can you imagine how buff I am?
                 Wait(2)
                 Say(__name__,"That was tasty. Now for the bell peppers... ")
 
@@ -122,7 +123,7 @@ def quest3():
                 else:
                     Say(__name__,str(numEggs)+"? There are too many eggs...")
                 Wait(1)
-                Say(__name__,"I thought I said 10! Do you not know how to count eggs? Counting is *FUNDAMENTAL* for the chosen one...")
+                Say(__name__,"I thought I said 10! Do you not know how to count eggs? Counting is *FUNDAMENTAL* for the chosen one... Come back and talk to me when you're done!")
 
         else:
             Say(__name__,"Hmm...")
@@ -134,7 +135,7 @@ def quest3():
 def quest4():
 
     #Everyone knows you don't count bellpeppers the same way you count eggs.
-    bellpepperCounting= [1,2,3,4,6,9,11,7,13,12,8,10, 5,14,15,16,18,19,17]
+    bellpepperCounting= [1,2,3,4,6,9,11,7,13,12,8,10,5,14,15,16,18,19,17]
 
     if(State.quest4given):
         Say(__name__,"...")
@@ -165,8 +166,10 @@ def quest4():
                     importlib.reload(globals()[bellpepper])
                 else:
                     globals()[bellpepper] = importlib.import_module("basket."+bellpepper)
+                #To be honest what if the Explorer is colour blind?
+                #Oh well they should be able to look at the fundamental properties anayway.
                 if (globals()[bellpepper].Colour != "Green"):
-                    Say(__name__, "Why did you bring me red apples? "+ bellpepper +" is not *FUNDAMENTALLY* green. Bell peppers should be green. Go find the right ones.")
+                    Say(__name__, "Why did you bring me red apples? "+ bellpepper +" is not *FUNDAMENTALLY* green. Bell peppers should be green. Go find the right ones. Come back and talk to me when you're done!")
                     allGreen = False
                     break
             if (allGreen):
@@ -183,7 +186,7 @@ def quest4():
             else:
                 Say(__name__,str(numBellpeppers)+"? There are too many bellpeppers...")
             Wait(1)
-            Say(__name__,"I thought I said 5! Do you not know how to count? Counting is *FUNDAMENTAL* for the chosen one...")
+            Say(__name__,"I thought I said 5! Do you not know how to count? Counting is *FUNDAMENTAL* for the chosen one... Come back and talk to me when you're done!")
 
     else:
         Say(__name__,"Hmm...")

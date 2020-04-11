@@ -9,7 +9,7 @@ def Show(filename):
             opener ="open" if sys.platform == "darwin" else "xdg-open"
             subprocess.call([opener, path])
     except:
-        print("Unable to open image in your current system. To see it manually go to: ")
+        print("This version of the game is unable to open images automatically. To see it manually go to: ")
         print(path)
 
 def Say(name, text):
