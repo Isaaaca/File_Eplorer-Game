@@ -96,7 +96,7 @@ def liberate(target):
             if(State.allLiberated()):
                 Wait(5)
                 Pause()
-                print("!!!!!!GAME OVER!!!!!!!\N")
+                print("!!!!!!GAME OVER!!!!!!!\n")
                 for line in GameOverMsg.split('\n'):
                     finalWords = ""
                     for c in line:
