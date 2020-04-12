@@ -94,7 +94,7 @@ def liberate(target):
             importlib.reload(State)
 
             if(State.allLiberated()):
-                Wait(5)
+                Wait(3)
                 Pause()
                 print("!!!!!!GAME OVER!!!!!!!\n")
                 for line in GameOverMsg.split('\n'):
