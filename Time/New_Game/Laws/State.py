@@ -14,7 +14,7 @@ spokenToProphetOnLiberation = False
 prophet_liberated = False
 grandmaster_liberated = False
 poultry_seller_liberated = False
-messenger_liberated = False
+quack_liberated = False
 
 def CanLiberate():
     for att in globals():
